@@ -27,8 +27,18 @@
 				echo '<h3>'.$array['etiquetas'].'</h3>';
 				echo '<h3>'.$comuna.'</h3>';
 				echo '<form action="info_part.php" method="post">';
-				echo '<input type="submit" id="subtn" value="'.$participante.'">';
+				echo '<input type="submit" class="subtn" value="'.$participante.'">';
 				echo '<input type="hidden" name="id" value="'.$array['participante'].'">';
+				echo '<div id="calificador">';
+				echo 'Calificar foto:	<select>';
+				echo '<option id="opcion1" value="1">1</option>';
+				echo '<option id="opcion2" value="2">2</option>';
+				echo '<option id="opcion3" value="3">3</option>';
+				echo '<option id="opcion4" value="5">4</option>';
+				echo '<option id="opcion5" value="5">5</option>';
+				echo '</select>';
+				echo '<p>Puntaje: Sin información</p>';
+				echo '</div>';
 				echo '</form>';
 
 			}
@@ -36,7 +46,7 @@
 			?>
 		</div>
 		<form action="index.html">
-  			<button id="subtn">Volver al Inicio</button>
+  			<button class="subtn">Volver al Inicio</button>
 		</form>	
 	</body>
 </html>

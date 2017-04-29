@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -18,29 +19,27 @@
 		$query = "SELECT * FROM `fotografia`";
 		$db->prepare($query);
 		$result = $db->query($query);
-		$i = 6;
+		$i = 5;
 		while ($row = $result->fetch_assoc()) {
-			if ($i % 6 == 0 || $i % (2*6) == 0) {
+			if ($i % 5 == 0) {
 				echo '<tr>';
 			}
-			else if ($i % 6 != 0) {
-				echo '<td>';
-				echo '<div class="foto" style="float: left;">';
-				echo '<form action="info_foto.php" method="post">';
-				echo '<button id="subtn"><img src="'.$row['ruta_archivo'].'" width="120" height="120" alt=""></button>';
-				echo '<h3>'.$row['etiquetas'].'</h3>';
-				echo '<input type="hidden" name="id" value="'.$row['id'].'">';
-				echo '</form>';
-				echo '</div>';
-				echo '</td>';
 
-			}
-			if ($i % (2*6) == 0) {
+			echo '<td>';
+			echo '<div class="foto" style="float: left;">';
+			echo '<form action="info_foto.php" method="post">';
+			echo '<button class="subtn"><img src="'.$row['ruta_archivo'].'" width="120" height="120" alt=""></button>';
+			echo '<h3>'.$row['etiquetas'].'</h3>';
+			echo '<input type="hidden" name="id" value="'.$row['id'].'">';
+			echo '</form>';
+			echo '</div>';
+			echo '</td>';
+			
+			if ($i % 5 == 4) {
 				echo '</tr>';
 			}
 			$i++;
 		}
-
 		$db->close();
 		?>
 		</table>
@@ -53,7 +52,7 @@
   			<button>Volver al Inicio</button>
 		</form>
 		<script>
-			$('#myTable').paginate({ limit: 7 });
+			$('#myTable').paginate({ limit: 5 });
 		</script>	
 	</body>
 </html>

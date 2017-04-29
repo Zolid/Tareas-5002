@@ -21,15 +21,15 @@ $db->close();
 				<tbody>
 					<tr>
 						<td>Título de Fotografía</td>
-						<td><input type="text" name="titulo[0]" size="30" maxlength="50"></td>
+						<td><input type="text" name="titulo[0]" size="30" maxlength="50" required></td>
 					</tr>
 					<tr>
 						<td>Archivo</td>
-						<td><input  type="file" name="archivo[0]"></td>
+						<td><input  type="file" name="archivo[0]" required></td>
 					</tr>
 					<tr>
 						<td>Etiqueta:</td>
-						<td><input type="text" name="etiqueta[0]" size="12" maxlength="20"></td>
+						<td><input type="text" name="etiqueta[0]" size="12" maxlength="20" required></td>
 					</tr>
 					<tr>
 						<td>Región:</td>
@@ -53,7 +53,7 @@ $db->close();
 				</tr>
 					<tr>
 						<td>Dirección:</td>
-						<td><input type="text" name="calle-numero[0]" size="80" maxlength="200"></td>
+						<td><input type="text" name="calle-numero[0]" size="80" maxlength="200" required></td>
 					</tr>
 				</tbody>
 			</table>
@@ -70,6 +70,7 @@ $db->close();
 			}
 
 			$("#btn").addEventListener("click", function(){
+
 				if (max < 9) {
 					var value = max + 2;
 					max += 1
@@ -85,17 +86,17 @@ $db->close();
 					cell0 = row0.insertCell(0);
 					cell1 = row0.insertCell(1);
 					cell0.innerHTML = "Título de Fotografía";
-					cell1.innerHTML = '<input type="text" name="titulo['+max+']" size="30" maxlength="50">'
+					cell1.innerHTML = '<input type="text" name="titulo['+max+']" size="30" maxlength="50" required>'
 					row1 = tbody.insertRow(1);
 					cell0 = row1.insertCell(0);
 					cell1 = row1.insertCell(1);
 					cell0.innerHTML = "Archivo";
-					cell1.innerHTML = '<input type="file" id="file" name="archivo['+max+']">'
+					cell1.innerHTML = '<input type="file" id="file" name="archivo['+max+']" required>'
 					row2 = tbody.insertRow(2);
 					cell0 = row2.insertCell(0);
 					cell1 = row2.insertCell(1);
 					cell0.innerHTML = "Etiqueta";
-					cell1.innerHTML = '<input type="text" name="etiqueta['+max+']" size="12" maxlength="20">'
+					cell1.innerHTML = '<input type="text" name="etiqueta['+max+']" size="12" maxlength="20" required>'
 					row3 = tbody.insertRow(3);
 					cell0 = row3.insertCell(0);
 					cell1 = row3.insertCell(1);
@@ -118,7 +119,7 @@ $db->close();
 					cell0 = row5.insertCell(0);
 					cell1 = row5.insertCell(1);
 					cell0.innerHTML = "Dirección"
-					cell1.innerHTML = '<input type="text" name="calle-numero['+max+']" size="80" maxlength="200">'
+					cell1.innerHTML = '<input type="text" name="calle-numero['+max+']" size="80" maxlength="200" required>'
 					
 					$("#formulario").insertBefore(table, button);
 					$("#formulario").insertBefore(brk, button);
@@ -126,6 +127,7 @@ $db->close();
 
 					}
 				});
+
 
 				/*function validateName(name) {
 	  				if (name=="")

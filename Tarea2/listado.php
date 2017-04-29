@@ -39,7 +39,7 @@
 					echo '<td><div>';
 					echo '<form action="info_part.php" method="post">';
 					echo '<input type="hidden" name="id" value="'.$row['id'].'"/>';
-					echo '<input id="subtn"type="submit" value="'.$row['nombre'].'"/></form></div></td>';
+					echo '<input class="subtn"type="submit" value="'.$row['nombre'].'"/></form></div></td>';
 					echo '<td>'.$row['email'].'</td>';
 					echo '<td>'.$row['nFotos'].'</td>';
 					echo '<td> Sin información</td>';
@@ -54,7 +54,7 @@
 		<br>
 		<br>
 		<form style="display: inline" action="index.html" method="get">
-  			<button id="subtn">Volver al Inicio</button>
+  			<button class="subtn">Volver al Inicio</button>
 		</form>
 		<script>
 			$('#myTable').paginate({ limit: 5 });

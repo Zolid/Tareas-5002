@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>Datos del Participante</title>
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="estilos.css">
 		<script src="Javascripts/jquery-3.2.1.js"></script>
