@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Galería de fotografías</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="galeria.js"></script>
+	</head>
+	<body>
+		<div id="contenedor">
+			<h2>Galería de Imágenes</h2>
+			<div id="foto">
+				<img src="album/pololos.jpg" width="800" height="600" alt="Big photo">
+			</div>
+			<div id="etiqueta"><h2>#Pololos</h2></div>
+			<form style="display: inline" action="info_part.html" method="get">
+  				<input type="submit" id="btn" name="dueno" value="Gabriel Iturra">
+			</form>	
+			<div id="lugar"><h2>Parque Bicentenario, Santiago</h2></div>
+			<div id="calificador">
+				Calificar foto:	<select>
+									<option id="opcion1" value="1">1</option>
+									<option id="opcion2" value="2">2</option>
+									<option id="opcion3" value="3">3</option>
+									<option id="opcion4" value="5">4</option>
+									<option id="opcion5" value="5">5</option>
+								</select>
+			</div>
+			<h3 id="puntaje">Puntaje: 98 puntos</h3>
+			<br>
+		</div>
+			<br>
+			<div class="thumb">
+				<div class="contFoto">
+					<a href="#" id="foto1"><img src="album/pololos.jpg" width="120" height="120" title="Gabriel Iturra" alt="#pololos"></a>
+					<h3 id="ptj1">Puntaje: 98 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto2"><img src="album/fire.jpg" width="120" height="120" title="Daniela Jerez" alt="#fire"></a>
+					<h3 id="ptj2">Puntaje: 58 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto3"><img src="album/sunset.jpg" width="120" height="120" title="Gabriel Iturra" alt="#PuestaDeSol"></a>
+					<h3 id="ptj3">Puntaje: 20 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto4"><img src="album/bulldozer.jpg" width="120" height="120" title="Daniel Fica" alt="#machine"></a>
+					<h3 id="ptj4">Puntaje: 14 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto5"><img src="album/amigos.jpg" width="120" height="120" title="Juan Perez" alt="#friends"></a>
+					<h3 id="ptj5">Puntaje: 100 puntos</h3>
+				</div>
+
+				<br>
+				<div class="contFoto">
+					<a href="#" id="foto6"><img src="album/woman.jpg" width="120" height="120" title="Gabriel Iturra" alt="#woman"></a>
+					<h3 id="ptj6">Puntaje: 88 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto7"><img src="album/tiger.jpg" width="120" height="120" title="Juan Perez" alt="#tiger"></a>
+					<h3 id="ptj7">Puntaje: 150 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto8"><img src="album/monastery.jpg" width="120" height="120" title="Daniel Fica" alt="#monastery"></a>
+					<h3 id="ptj8">Puntaje: 125 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto9"><img src="album/paddle.jpg" width="120" height="120" title="Nathalie Echeverria" alt="#big #machine"></a>
+					<h3 id="ptj9">Puntaje: 67 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto10"><img src="album/horse.jpg" width="120" height="120" title="Gabriel Iturra" alt="#caballito"></a>
+					<h3 id="ptj10">Puntaje: 10 puntos</h3>
+				</div>	
+				<br>
+				<div class="contFoto">
+					<a href="#" id="foto11"><img src="album/tianjin.jpg" width="120" height="120" title="Gabriel Iturra" alt="#wonderful"></a>
+					<h3 id="ptj11">Puntaje: 49 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto12"><img src="album/sihastria.jpg" width="120" height="120" title="Daniel Fica" alt="#iglesia"></a>
+					<h3 id="ptj12">Puntaje: 42 puntos</h3>
+				</div>
+				
+				
+			</div>
+
+		<form style="display: inline" action="principal.html" method="get">
+  			<button>Volver al Inicio</button>
+		</form>	
+	</body>
+</html>

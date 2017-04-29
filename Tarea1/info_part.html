@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Datos del Participante</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="galeria.js"></script>
+	</head>
+	<body>
+		<h1>Hola Gabriel!</h1>
+		<table>
+			<tbody>
+				<tr style="background-color: darkgreen; color: white;">
+					<td>Foto Perfil</td>
+					<td>Nombre</td>
+					<td>Email</td>
+					<td>Teléfono</td>
+					<td>Dirección</td>
+					<td>Región</td>
+					<td>Mini-Biografía</td>
+				</tr>
+				<tr>
+					<td><img src="fotos_perfil/Bombero.png" alt="foto-perfil0" width="120" height="120"></td>
+					<td style="text-align: center;">Gabriel Iturra</td>
+					<td>gabrieliturrab@ug.uchile.cl</td>
+					<td>+569-987654321</td>
+					<td>Ada Loveplace 1313</td>
+					<td>Metropolitana</td>
+					<td>Amante de la Computación</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="contenedor">
+			<h2>Fotografías</h2>
+			<div id="foto">
+				<img src="album/pololos.jpg" width="800" height="600" alt="big photo">
+			</div>
+			<div id="etiqueta"><h2>#Pololos</h2></div>
+			<br>
+		</div>
+		<div class="thumb">
+				<div class="contFoto">
+					<a href="#" id="foto1"><img src="album/pololos.jpg" width="120" height="120" title="Gabriel Iturra" alt="#pololos"></a>
+					<h3>Puntaje: 98 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto3"><img src="album/sunset.jpg" width="120" height="120" title="Gabriel Iturra" alt="#PuestaDeSol"></a>
+					<h3>Puntaje: 20 puntos</h3>
+				</div>
+				<div class="contFoto">
+					<a href="#" id="foto10"><img src="album/horse.jpg" width="120" height="120" title="Gabriel Iturra" alt="#caballito"></a>
+					<h3>Puntaje: 10 puntos</h3>
+				</div>	
+				<div class="contFoto">
+					<a href="#" id="foto11"><img src="album/tianjin.jpg" width="120" height="120" title="Gabriel Iturra" alt="#wonderful"></a>
+					<h3>Puntaje: 49 puntos</h3>
+				</div>
+		</div>
+		<br>
+		<br>
+		<form style="display: inline" action="principal.html" method="get">
+  			<button id="subtn">Volver al Inicio</button>
+		</form>	
+	</body>
+</html>
