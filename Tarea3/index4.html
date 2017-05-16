@@ -35,8 +35,10 @@
 		 	var map;
 		 	var geocoder;
 		 	var comunas;
-      var num;
-      var fotos = [];
+      var infoWindows = [];
+      var markers = [];
+      var ltd = [];
+      var lng = [];
       		function initMap() {
         		var uluru = {lat: -33.441258, lng: -70.688694};
         		map = new google.maps.Map(document.getElementById('map'), {
@@ -68,86 +70,44 @@
       			var datos = [];
       			for (var i in comunas) {
       				datos.push([i, comunas[i]])
-
       			}
-
-            for (var i = 0; i < datos.length; ++i) {
-              for (var j = 0; j < datos[i].length; ++j) {
-                fotos.push(datos[i][1][j]);
-              }
-            }
-
-            console.log(datos[0][1][1]['participante'])
-            var infoWindow = new google.maps.InfoWindow({
-              content: ""
-            });
-
-            var infoWindow2 = new google.maps.InfoWindow({
-              content: ""
-            });
-
-
            
             var pais = " , Chile";
             for (var i in datos) {
               var ubicacion = datos[i][0];
               ubicacion += pais;
-              num = datos[i][1].length;
-
-              var contenido = "";
-              for (var j = 0; j < datos[i][1].length; ++j) {
-                contenido += '<h3> Participante: '+datos[i][1][j]['participante']+' Título Fotografía: '+datos[i][1][j]['titulo']+'</h3>';
-              }
-
-              geocoder.geocode({'address':ubicacion}, (function(i, j){
-                return function(results, status){
-                if (status == 'OK') {
-                  map.setCenter(results[0].geometry.location);
+              geocoder.geocode({'address': ubicacion}, function(results, status){
+                ltd.push(results[0].geometry.location.lat());
+                lng.push(results[0].geometry.location.lng());
+                if (status === 'OK') {
                   var marker = new google.maps.Marker({
                     map: map,
                     position: results[0].geometry.location,
-                    mapTypeId:google.maps.MapTypeId.ROADMAP,
-                    title: '<h2>'+ i +' Fotos concursando </h2>'
+                    animation : google.maps.Animation.DROP,
+                    infoWindowIndex : i
                   });
-                  google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
-                      return function() {
-                        infoWindow.setContent(i);
-                        infoWindow.setOptions({maxWidth: 200});
-                        infoWindow.open(map, marker);
-                      }
-                  }) (marker, marker.title));
-                  google.maps.event.addListener(marker, 'mouseout', (function(marker) {
-                      return function() {
-                        infoWindow.close(map, marker);
-                      }
-                  }) (marker));
+                  var contenido;
+                  for (var j in datos[i][1]) {
+                    contenido += '<strong>'+datos[i][1][j]+'</strong><br>';
+                  }
+                  var infoWindow = new google.maps.InfoWindow({
+                    content : contenido
+                  });
 
-                  google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                      return function() {
-                        infoWindow2.setContent(i);
-                        infoWindow2.setOptions({maxWidth: 600});
-                        infoWindow2.open(map, marker);
-                      }
-                  }) (marker, j));
+                  google.maps.event.addListener(marker, 'click', function(event){
+                    infoWindow.open(map, this);
+                  });
 
-                } else {
-                  alert("Falló...")
+                  infoWindows.push(infoWindow);
+                  markers.push(marker);
+
                 }
+              });
             }
-
-              })(num, contenido));
-                
-
+            console.log(ltd);
+            console.log(lng);
             
-
-
-
-         
-           
-            
-        }}
-
-        
+        }
       		
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX6vNMxe_-YEBCKxDZ2s2xsi3Rii3W4fQ&callback=initMap">
