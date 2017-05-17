@@ -96,7 +96,7 @@
 
               var contenido = "";
               for (var j = 0; j < datos[i][1].length; ++j) {
-                contenido += '<h3> Participante: '+datos[i][1][j]['participante']+' Título Fotografía: '+datos[i][1][j]['titulo']+'</h3>';
+                contenido += '<h3> Participante: '+datos[i][1][j]['participante']+' Título Fotografía: '+datos[i][1][j]['titulo']+'</h3>'+'<form target="_blank" action="info_foto.php" method="post">'+'<input type="hidden" name="id" value="'+datos[i][1][j]['id']+'"/>'+'<input class="subtn"type="submit" value="Ver Info"/>'+'</form>';
               }
 
               geocoder.geocode({'address':ubicacion}, (function(i, j){
