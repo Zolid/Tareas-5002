@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Concurso de Fotografía</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<style>
 			#map {
@@ -70,14 +70,6 @@
       				datos.push([i, comunas[i]])
 
       			}
-
-            for (var i = 0; i < datos.length; ++i) {
-              for (var j = 0; j < datos[i].length; ++j) {
-                fotos.push(datos[i][1][j]);
-              }
-            }
-
-            console.log(datos[0][1][1]['participante'])
             var infoWindow = new google.maps.InfoWindow({
               content: ""
             });
